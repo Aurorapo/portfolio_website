@@ -5,6 +5,10 @@
     overflow: hidden;
 }
 
+.el-group {
+    color: $main-color;
+}
+
 // All buttons 
 %btn-shared {
     display: inline-block;
@@ -67,6 +71,7 @@ input[class^='btn-']:hover {
 .lead {
     font-size: 1.3rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .text-center {
@@ -92,7 +97,7 @@ input[class^='btn-']:hover {
     }
 }
 
-//MArgin classes
+//Margin classes
 .my {
     &-1 {
         margin: 1rem 0;
@@ -127,4 +132,3 @@ input[class^='btn-']:hover {
     display: block;
     margin: 0 auto 1rem auto;
 }
-

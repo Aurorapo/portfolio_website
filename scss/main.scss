@@ -2,10 +2,6 @@
 @import 'utilities';
 @import 'item_grid';
 
-body {
-    font-family: 'Dosis', sans-serif ;
-}
-
 //General Styles
 *{
     margin: 0;
@@ -179,8 +175,8 @@ img {
       // process-icon
       &-icon {
         border-radius: 50%;
-        background: $dark-color;
-        color: set-text-color($dark-color);
+        background: $light-color;
+        color: set-text-color($light-color);
         padding: 2rem;
         width: 70px;
         height: 70px;
@@ -190,7 +186,7 @@ img {
         transition: all 1s;
 
         &:hover {
-          background: $main-color;
+          background: $medium-color;
           width: 90px;
           height: 90px;
           line-height: 90px;
@@ -219,12 +215,17 @@ img {
         //grid area
         .bio-image {
             grid-area: bioimage;
+            height: 100%;
         }
 
         .bio {
             grid-area: bio;
             border-left: 3px solid $main-color;
             padding: 0.9rem;
+
+            h4 {
+                color: $main-color;
+            }
         }
 
         .award-1 {
@@ -252,7 +253,7 @@ img {
         .progress {
             overflow: hidden;
             height: 20px;
-            background: $medium-color;
+            background: $light-color;
             border-radius: 5px;
             margin-bottom: 0.7rem;
 
@@ -280,29 +281,52 @@ img {
 
     //Fourth section
     &-d {
-        .testimonials {
+        .process-p {
+            font-size: 1rem;
+        }
+        
+        .process {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.5rem;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 1.5rem;
+            text-align: center;
     
-            ul {
-                list-style: none;
-                margin-top: 1rem;
-                display: flex;
-                align-items: center;
+            // process-step
+            &-step {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 28px;
+            background: $main-color;
+            color: set-text-color($main-color);
+            border-radius: 50%;
+            height: 15px;
+            width: 15px;
+            line-height: 15px;
+            padding: 1rem;
+            transition: all 1s;
             }
-
-            p{
-                border: 1px solid $medium-color;
-                border-radius: 5px;
-                padding: 0.5rem;
+    
+            // process-icon
+            &-icon {
+            border-radius: 50%;
+            background: $light-color;
+            color: set-text-color($light-color);
+            padding: 2rem;
+            width: 70px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            position: relative;
+    
+            &:hover {
+                background: $medium-color;
+    
+                .process-step {
+                background: $dark-color;
+                color: set-text-color($dark-color);
+                }
             }
-
-            img {
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                margin-right: 0.5rem;
             }
         }
     }
@@ -318,7 +342,6 @@ img {
             'subject phone'
             'message message';
             gap: 1.2rem;
-            margin-bottom: 1.2rem;
 
             //grid areas
             .name-input{
@@ -344,6 +367,25 @@ img {
 
             .text-input {
                 padding: 0.5rem 1rem;
+                background-color: $medium-color;
+                color: #fff;
+                border: none;
+                border-radius: 20px;
+
+                &::placeholder {
+                    color: #ffffff;
+                    transition: opacity .4s;
+                    font-family: 'Dosis', sans-serif;
+                    font-size: 1rem;
+                }
+
+                &:focus {
+                    border: 2px solid $main-color;
+                }
+
+                &:-webkit-autofill {
+                    transition: background-color 6000s, color 6000s;
+                }
             }
         }
 
@@ -363,7 +405,7 @@ img {
     &-c {
         h1 {
             text-align: center;
-            font-size: 3rem;
+            font-size: 2rem;
         }
     }
 }
